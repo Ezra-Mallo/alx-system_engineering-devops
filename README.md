@@ -7,3 +7,4 @@ Task 5. I love numbers
 Task 6. Welcome
 Task 7. Betty in my first directory
 Task 8. Bye bye Betty
+Task 9. Bye bye My first directory

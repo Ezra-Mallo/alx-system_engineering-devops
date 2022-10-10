@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -type f -print | wc -l
+grep '^[A-Za-z]' /etc/ssh/sshd_config

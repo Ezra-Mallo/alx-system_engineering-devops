@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 i=0
 
 until (( i > 9 ))

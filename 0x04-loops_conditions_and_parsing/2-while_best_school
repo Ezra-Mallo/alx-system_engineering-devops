@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
-i=0
+# Displays "Best School" 10 times using a whilei loop.
 
+i=0
 while (( i<10 ))
-	do
-	echo "Best School"
-	i=$((i+1))
+do
+  echo "Best School"
+  i=$((i+1))
 done

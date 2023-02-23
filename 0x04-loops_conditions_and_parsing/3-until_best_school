@@ -3,7 +3,7 @@
 
 i=0
 until (( i > 9 ))
-do
+	do
 	echo "Best School"
 	i=$((i + 1))
 done

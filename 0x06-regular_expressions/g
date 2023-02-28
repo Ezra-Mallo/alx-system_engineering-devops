@@ -1,3 +1,4 @@
 #!/bin/env bash
 git add .
 git commit -m "Task 0 to 8"
+git push

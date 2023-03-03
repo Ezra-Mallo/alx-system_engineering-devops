@@ -1,6 +1,5 @@
 0x08. Networking basics #1
-DevOps
-Network
+[DevOps] [Network]
 SysAdmin
  By: Sylvain Kalache
  Weight: 1

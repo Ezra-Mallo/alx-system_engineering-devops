@@ -1,4 +1,4 @@
 #!/bin/bash
 git add .
-git commit -m "Task 0. Create a file"
+git commit -m "Task 1. Install a package"
 git push

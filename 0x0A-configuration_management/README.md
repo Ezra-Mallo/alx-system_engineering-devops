@@ -2,7 +2,7 @@
 # Background Context
 
 <p align="center">
-<img src="https://github.com/Ezra-Mallo/alx-system_engineering-devops/0x0A-configuration_management//blog/master/images/alx_pic1.gif"
+<img src="https://github.com/Ezra-Mallo/alx-system_engineering-devops/blob/master/0x0A-configuration_management/images/alx_pics1.gif"
 	alt="alx_pic1">
 </p>
 

@@ -15,9 +15,10 @@ Obviously writing Puppet code for your infrastructure requires an investment of 
 <p align="center">
 <img src="https://github.com/Ezra-Mallo/alx-system_engineering-devops/blob/master/0x0A-configuration_management/images/alx_pics1.gif"
 	alt="alx_pic1">
-</p>
 
 [That was me ^_^‘:](https://twitter.com/devopsreact/status/836971570136375296)
+</p>
+
 ## Install puppet
 
 $ apt-get install -y ruby=1:2.7+1 --allow-downgrades

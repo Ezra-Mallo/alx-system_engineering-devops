@@ -17,7 +17,9 @@ Obviously writing Puppet code for your infrastructure requires an investment of 
 	alt="alx_pic1">
 </p>
 <p align="center">
+
 [That was me ^_^‘:](https://twitter.com/devopsreact/status/836971570136375296)
+
 </p>
 
 ## Install puppet

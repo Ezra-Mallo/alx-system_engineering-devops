@@ -17,6 +17,7 @@ Obviously writing Puppet code for your infrastructure requires an investment of 
 	alt="alx_pic1">
 </p>
 
+[That was me ^_^‘:](https://twitter.com/devopsreact/status/836971570136375296)
 ## Install puppet
 
 $ apt-get install -y ruby=1:2.7+1 --allow-downgrades
@@ -28,7 +29,6 @@ $ apt-get install -y ruby-shadow
 $ apt-get install -y puppet
 
 
-That was me ^_^‘: https://twitter.com/devopsreact/status/836971570136375296
 
 # Resources: Read or watch:
 

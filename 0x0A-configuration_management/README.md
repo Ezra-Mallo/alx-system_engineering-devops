@@ -31,7 +31,7 @@ $ apt-get install -y puppet
 
 
 
-# Resources: Read or watch:
+## Resources: Read or watch:
 
 * [Intro to Configuration Management](https://intranet.alxswe.com/rltoken/GL30hu-aRcKzPOvK8JO-Bg)
 * [Puppet resource type: file (check “Resource types” for all manifest types in the left menu)](https://intranet.alxswe.com/rltoken/WON0M4DNRabf88KAG_pDUA)

@@ -1,6 +1,6 @@
 <h1 align="center">0x0A. Configuration management</h1>
 <p align="center">
-<img src="https://github.com/Ezra-Mallo/alx-system_engineering-devops/blob/master/0x0A-configuration_management/images/alx_pics1.gif"
+<img src="https://github.com/Ezra-Mallo/alx-system_engineering-devops/blob/master/0x0B-ssh/images/alx_pics1.gif"
 	alt="alx_pic1">
 </p>
 
@@ -30,6 +30,6 @@ Note: Your server is configured with an Ubuntu 20.04 LTS environment.
 
 ## man or help:
 
-ssh
-ssh-keygen
-env
+* ssh
+* ssh-keygen
+* env

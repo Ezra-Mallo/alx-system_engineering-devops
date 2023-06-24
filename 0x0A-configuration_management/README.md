@@ -1,8 +1,4 @@
 <h1 align="center">0x0A. Configuration management</h1>
-<p align="center">
-<img src="https://github.com/Ezra-Mallo/alx-system_engineering-devops/blob/master/0x0A-configuration_management/images/alx_pics1.gif"
-	alt="alx_pic1">
-</p>
 
 # Background Context
 When I was working for SlideShare, I worked on an auto-remediation tool called Skynet that monitored, scaled and fixed Cloud infrastructure. I was using a parallel job-execution system called MCollective that allowed me to execute commands to one or multiple servers at the same time. I could apply an action to a selected set of servers by applying a filter such as the server’s hostname or any other metadata we had (server type, server environment…). At some point, a bug was present in my code that sent nil to the filter method.
@@ -16,6 +12,10 @@ I started the parallel job-execution and after some time, I realized that it was
 Thanks to Puppet, we were able to restore our infrastructure to normal operation in under 1H, pretty impressive. Imagine if we had to do everything manually: launching the servers, configuring and linking them, importing application code, starting every process, and obviously, fixing all the bugs (you should know by now that complicated infrastructure always goes sideways)…
 
 Obviously writing Puppet code for your infrastructure requires an investment of time and energy, but in the long term, it is for sure a must-have.
+<p align="center">
+<img src="https://github.com/Ezra-Mallo/alx-system_engineering-devops/blob/master/0x0A-configuration_management/images/alx_pics1.gif"
+	alt="alx_pic1">
+</p>
 
 ## Install puppet
 
@@ -40,4 +40,5 @@ That was me ^_^‘: https://twitter.com/devopsreact/status/836971570136375296
 * [Puppet 5 Docs](https://www.puppet.com/docs/puppet/5.5/puppet_index.html)
 
 ## Install puppet-lint
+
 $ gem install puppet-lint

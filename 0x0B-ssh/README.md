@@ -35,11 +35,16 @@ Note: Your server is configured with an Ubuntu 20.04 LTS environment.
 * env
 
 ## MOre materials from internet
+* [10 examples to generate SSH key in Linux (ssh-keygen)](https://www.golinuxcloud.com/generate-ssh-key-linux/)
+* [Beginners guide to use ssh config file with examples](https://www.golinuxcloud.com/ssh-config/)
+* [PSSH - 10 practical examples to use parallel SSH in Linux](https://www.golinuxcloud.com/pssh-commands-parallel-ssh-linux-examples/)
+* [6 ssh authentication methods to secure connection (sshd_config)](https://www.golinuxcloud.com/openssh-authentication-methods-sshd-config/)
+* [How to undo rm in Linux? :100% Working](https://www.golinuxcloud.com/how-to-undo-rm-in-linux-100-working/)
+* [5 practical examples to list running processes in Linux](https://www.golinuxcloud.com/linux-list-processes/)
 * [OpenBSD manual page server](https://man.openbsd.org/ssh)
-* [Getting Started With SSH in Linux
-](https://www.hostinger.com/tutorials/ssh/basic-ssh-commands)
+* [Getting Started With SSH in Linux](https://www.hostinger.com/tutorials/ssh/basic-ssh-commands)
 * [Basic SSH Commands That You Should Know About](https://www.hostinger.com/tutorials/ssh/basic-ssh-commands)
-
 * [ssh command in Linux with Examples](https://www.geeksforgeeks.org/ssh-command-in-linux-with-examples/)
-* [SSH Commands Cheat Sheet for Linux Users
-](https://computingforgeeks.com/ssh-cheatsheet-for-sysadmins/)
+* [SSH Commands Cheat Sheet for Linux Users](https://computingforgeeks.com/ssh-cheatsheet-for-sysadmins/)
+* [ssh command in Linux with Examples](https://www.geeksforgeeks.org/ssh-command-in-linux-with-examples/)
+* [Getting Started With SSH in Linux](https://linuxhandbook.com/ssh-basics/)

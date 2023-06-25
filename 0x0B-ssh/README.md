@@ -35,6 +35,7 @@ Note: Your server is configured with an Ubuntu 20.04 LTS environment.
 * env
 
 ## MOre materials from internet
+* [OpenBSD manual page server](https://man.openbsd.org/ssh)
 * [Getting Started With SSH in Linux
 ](https://www.hostinger.com/tutorials/ssh/basic-ssh-commands)
 * [Basic SSH Commands That You Should Know About](https://www.hostinger.com/tutorials/ssh/basic-ssh-commands)

@@ -33,3 +33,12 @@ Note: Your server is configured with an Ubuntu 20.04 LTS environment.
 * ssh
 * ssh-keygen
 * env
+
+## MOre materials from internet
+* [Getting Started With SSH in Linux
+](https://www.hostinger.com/tutorials/ssh/basic-ssh-commands)
+* [Basic SSH Commands That You Should Know About](https://www.hostinger.com/tutorials/ssh/basic-ssh-commands)
+
+* [ssh command in Linux with Examples](https://www.geeksforgeeks.org/ssh-command-in-linux-with-examples/)
+* [SSH Commands Cheat Sheet for Linux Users
+](https://computingforgeeks.com/ssh-cheatsheet-for-sysadmins/)

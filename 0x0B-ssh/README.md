@@ -1,4 +1,4 @@
-<h1 align="center">0x0A. Configuration management</h1>
+<h1 align="center">0x0B. SSH</h1>
 <p align="center">
 <img src="https://github.com/Ezra-Mallo/alx-system_engineering-devops/blob/master/0x0B-ssh/images/alx_pics1.gif"
 	alt="alx_pic1">

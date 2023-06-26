@@ -40,5 +40,5 @@ For more information about child processes, [see this documentation.](https://ww
 
 ### man or help:
 
-* scp
+* [scp](https://www.softwaretestinghelp.com/scp-command-tutorial/)
 * curl

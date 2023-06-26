@@ -3,7 +3,7 @@
 ## DevOps | SysAdmin
 
 <p align="center">
-<img src="https://github.com/Ezra-Mallo/alx-system_engineering-devops/blob/master/0x0C-web_server/images/alx_pics1.png"
+<img src="https://github.com/Ezra-Mallo/alx-system_engineering-devops/blob/master/0x0C-web_server/images/alx_pic1.png"
 	alt="alx_pic1">
 </p>
 [![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://www.youtube.com/watch?v=AZg4uJkEa-4&feature=youtu.be&hd=1)

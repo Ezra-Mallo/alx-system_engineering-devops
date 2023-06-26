@@ -6,7 +6,7 @@
 <img src="https://github.com/Ezra-Mallo/alx-system_engineering-devops/blob/master/0x0C-web_server/images/alx_pic1.png"
 	alt="alx_pic1">
 </p>
-[!<img src="https://github.com/Ezra-Mallo/alx-system_engineering-devops/blob/master/0x0C-web_server/images/play_video.png"](https://www.youtube.com/watch?v=AZg4uJkEa-4&feature=youtu.be&hd=1)
+[Watch video](https://www.youtube.com/watch?v=AZg4uJkEa-4&feature=youtu.be&hd=1)
 
 ## Concepts
 ### What is a Child Process?

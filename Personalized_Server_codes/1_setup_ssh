@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+# connecting to my remote server
+
+if [ "$#" -lt "3" ];
+  then
+  echo "Usage: ./ssh_configuration <UserName> <Remote_Host_IP> <key filename> Path_to_and_Dest_file>"
+  echo "Usage: ./ssh_configuration  ubuntu    10.2.34.5.5  ~/var/www/html/"
+else
+
+  #Username
+  argv1=#1
+
+  #ip
+  argv2=#2
+
+  #key filename
+  argv3=#3
+  
+
+
+  ssh-keygen -b 4096 -N "betty" -f ~/.ssh/"$argv3"
+  
+  ssh  "$argv1"@"$argv2" -i ~/.ssh/"$argv3"
+  # -v or -q
+  ssh  "$argv1"@"$argv2" -q   
+  
+  echo ~/.ssh/ "$argv3".pub >> ~/.ssh/authorized_keys
+
+fi
+
+
+
+
+
+
+
+
+

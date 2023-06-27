@@ -1,12 +1,9 @@
 #!/usr/bin/env bash
 # script to install nginx
-
 apt-get update
 apt-get install -y nginx
-ufw enable -y
-mkdir /etc/nginx/html
+mkdir -p /var/www/html
 touch /etc/nginx/html/index.html
-sed -i 's/.*listen\s*80.*/        listen 80;/g' /etc/nginx/nginx.conf
-touch /etc/nginx/html/index.html
+chmod -R 755 /var/www
 echo "Hello World!" > /var/www/html/index.html
 service nginx restart

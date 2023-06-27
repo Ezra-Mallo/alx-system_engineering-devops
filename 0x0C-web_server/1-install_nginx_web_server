@@ -6,15 +6,7 @@ apt-get install -y nginx
 ufw enable -y
 mkdir /etc/nginx/html
 touch /etc/nginx/html/index.html
-# sed -i 's/.*listen\s*80.*/        listen 80;/g' /etc/nginx/nginx.conf
+sed -i 's/.*listen\s*80.*/        listen 80;/g' /etc/nginx/nginx.conf
 touch /etc/nginx/html/index.html
 echo "Hello World!" > /var/www/html/index.html
-printf %s "server {
-     listen      80 default_server;
-     listen      [::]:80 default_server;
-     root        /etc/nginx/html;
-     index       index.html index.htm;
-}
-" > /etc/nginx/sites-available/default
-
 service nginx restart

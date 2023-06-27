@@ -30,8 +30,9 @@ Note: Your server is configured with an Ubuntu 20.04 LTS environment.
 
 ## man or help:
 
-* ssh
 * ssh-keygen
+* [ssh configuration](https://linuxhandbook.com/ssh-config-file/)
+* [ssh configuration](https://www.ssh.com/academy/ssh/config)
 * env
 
 ## MOre materials from internet

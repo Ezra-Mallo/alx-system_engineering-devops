@@ -1,5 +1,6 @@
-Host=54.90.28.121
-     HostName=54.90.28.121
+Host=web_1
+     HostName=18.210.17.153
      User=ubuntu
      IdentityFile=~/.ssh/school
      PasswordAuthentication=no
+

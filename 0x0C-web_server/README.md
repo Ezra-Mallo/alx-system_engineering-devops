@@ -24,6 +24,8 @@ For more information about child processes, [see this documentation.](https://ww
 
 ## Resources read or watch:
 * [How the web works](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/How_the_Web_works)
+* [Linux SCP Command Explained: Securely Copy & Transfer Files {13 Examples}
+](https://phoenixnap.com/kb/linux-scp-command)
 * [Nginx](https://en.wikipedia.org/wiki/Nginx)
 * [How to Configure Nginx](https://en.wikipedia.org/wiki/Nginx)
 * [Child process concept page]()
@@ -42,3 +44,4 @@ For more information about child processes, [see this documentation.](https://ww
 
 * [scp](https://www.softwaretestinghelp.com/scp-command-tutorial/)
 * curl
+

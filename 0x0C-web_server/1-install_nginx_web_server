@@ -2,8 +2,8 @@
 # script to install nginx
 apt-get update
 apt-get install -y nginx
-mkdir -p /var/www/html
 touch /etc/nginx/html/index.html
 chmod -R 755 /var/www
 echo "Hello World!" > /var/www/html/index.html
+echo "Port 80" >> /etc/ssh/sshd_config
 service nginx restart

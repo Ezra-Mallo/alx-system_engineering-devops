@@ -38,7 +38,8 @@ For more information about child processes, [see this documentation.](https://ww
 * [Logs files on Linux](https://www.cyberciti.biz/faq/ubuntu-linux-gnome-system-log-viewer/)
 
 ## Other reference:
-
+* [.TECH Domains](https://intranet.alxswe.com/rltoken/Hcb-pfK8UiDBfwsDJPyZZw)
+* [GitHub Student Developer Pack](https://get.tech/github-student-developer-pack)
 * [RFC 7231 (HTTP/1.1)](https://datatracker.ietf.org/doc/html/rfc7231)
 * [RFC 7540 (HTTP/2)](https://datatracker.ietf.org/doc/html/rfc7540)
 

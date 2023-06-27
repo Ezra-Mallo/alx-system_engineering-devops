@@ -10,6 +10,6 @@ else
   USERNAME=$3
   PATH_TO_SSH_KEY=$4
   # scp [options] SourceFileName UserName@TargetHost:TargetPath
-  scp -i "$PATH_TO_SSH_KEY" -o StrictHostKeyChecking=no "$PATH_TO_FILE" "$USERNAME"@"$IP":~/
-#  scp -i "$4" -o StrictHostKeyChecking=no "$1" "$3"@"$2"dd:~/
+# scp -i "$PATH_TO_SSH_KEY" -o StrictHostKeyChecking=no "$PATH_TO_FILE" "$USERNAME"@"$IP":~/
+  scp -o StrictHostKeyChecking=no -i "$PATH_TO_SSH_KEY" "$PATH_TO_FILE" "$USERNAME"@"$IP":~/
 fi

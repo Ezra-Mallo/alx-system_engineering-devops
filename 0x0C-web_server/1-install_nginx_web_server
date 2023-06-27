@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # script to install nginx
-sudo apt-get update
-sudo apt-get install -y nginx
+apt-get update
+apt-get install -y nginx
 touch /etc/nginx/html/index.html
 chmod -R 755 /var/www
 echo "Hello World!" > /var/www/html/index.nginx-debian.html
-sudo ervice nginx restart
+sudo service nginx restart

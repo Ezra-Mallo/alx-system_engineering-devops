@@ -1,8 +1,6 @@
 <h1 align="center">alx-system_engineering-devops</h1>
 <p align="center">
   <img src="https://github.com/Ezra-Mallo/alx-system_engineering-devops/blob/master/images/image1.png" alt="alx_pic1">
-</p>
-<p align="center">
   <img src="https://github.com/Ezra-Mallo/alx-system_engineering-devops/blob/master/images/image2.png" alt="alx_pic1">
 </p>
 

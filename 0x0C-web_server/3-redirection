@@ -8,6 +8,11 @@ sudo mkdir /etc/nginx/html
 sudo touch /etc/nginx/html/index.html
 echo "Hello world!" | sudo tee /etc/nginx/html/index.html
 
+# This is Nginx default page (/etc/nginx/sites-availalbe/default) Server block
+# setting. It accepts the following codes:
+# (1) Port the server should listen to, (2) Root directory of the default page
+# (3) Format to accept for index page   (4) Action and location for redirect_me
+# (5) Action and location for error Page
 sudo printf %s "server {
     listen 80;
     listen [::]:80 default_server;

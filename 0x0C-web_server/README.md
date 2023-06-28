@@ -30,6 +30,7 @@ For more information about child processes, [see this documentation.](https://ww
 * [How to Configure Nginx](https://www.digitalocean.com/community/tutorials/how-to-set-up-nginx-server-blocks-virtual-hosts-on-ubuntu-16-04)
 * [How To Set Up Nginx Server Blocks (Virtual Hosts) on Ubuntu 16.04](https://www.digitalocean.com/community/tutorials/how-to-set-up-nginx-server-blocks-virtual-hosts-on-ubuntu-16-04)
 * [How To Install Nginx on Ubuntu 16.04: Use this guide to set up Nginx on its own.](https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-16-04)
+* [How To Set Up Nginx Server Blocks on Ubuntu 22.04](https://linuxhint.com/set-up-nginx-server-blocks-ubuntu-22-04/)
 * [How To Install Linux, Nginx, MySQL, PHP (LEMP stack) in Ubuntu 16.04: Use this guide if you will be using Nginx in conjunction with MySQL and PHP.](https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-in-ubuntu-16-04)
 * [Child process concept page]()
 * [Root and sub domain](https://landingi.com/help/domains-vs-subdomains/)

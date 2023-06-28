@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# redirect
+
+data="\tlocation /redirect_me {\n\t\treturn 301 https://jojoport.netlify.com;\n\t}"
+
+apt-get update
+apt-get install nginx -y
+echo  "Hello World!" > /var/www/html/index.html
+sed -i "/server_name _;/a\ ${data}" /etc/nginx/sites-available/default
+service nginx start

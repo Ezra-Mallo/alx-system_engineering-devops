@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # script to install nginx
-apt-get update
-apt-get install -y nginx
+sudo apt-get update
+sudo apt-get install -y nginx
 sudo mkdir -p /var/www/nginx/html
-touch /var/www/nginx/html/index.html
-chmod -R 755 /var/www/nginx/html
-echo "Hello World!" > /var/www/nginx/html/index.html
+sudo touch /var/www/nginx/html/index.html
+sudo chmod -R 755 /var/www/nginx/html
+sudo echo "Hello World!" > /var/www/nginx/html/index.html
 sudo service nginx restart

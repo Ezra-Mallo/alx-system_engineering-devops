@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+touch /home/emallo/alx/alx-system_engineering-devops/0x0C-web_server/testing
+printf %s "server {
+     listen      80 default_server;
+     listen      [::]:80 default_server;
+     root        /etc/nginx/html;
+     index       index.html index.htm;
+}" > /home/emallo/alx/alx-system_engineering-devops/0x0C-web_server/testing

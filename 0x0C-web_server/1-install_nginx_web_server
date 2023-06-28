@@ -1,7 +1,18 @@
 #!/usr/bin/env bash
-# script to install nginx
+# A script to install nginx on my ubuntu web server
 sudo apt-get update
 sudo apt-get install nginx -y
-sudo chown -R ubuntu /var/www/html
-sudo echo "Hello World!" > /var/www/html/index.nginx-debian.html
+#sudo chown -R ubuntu /viar/www/html
+sudo mkdir /var/www/nginx/html
+sudo touch /var/www/nginx/html/index.html
+# echo "Hello world!" > /etc/nginx/html/index.html will not work with sudo so 
+echo "Hello world!" | sudo tee /var/www/nginx/html/index.html
+
+sudo printf %s "server {
+    listen 80;
+    listen [::]:80 default_server;
+    root   /etc/nginx/html;
+    index  index.html index.htm;
+
+}" | sudo tee  /etc/nginx/sites-available/default
 sudo service nginx restart

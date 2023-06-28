@@ -1,10 +1,20 @@
 #!/usr/bin/env bash
-# redirect
+# Script to install nginx web server
 
-data="\tlocation /redirect_me {\n\t\treturn 301 https://jojoport.netlify.com;\n\t}"
+sudo apt-get update
+sudo apt-get install nginx -y
 
-apt-get update
-apt-get install nginx -y
-echo  "Hello World!" > /var/www/html/index.html
-sed -i "/server_name _;/a\ ${data}" /etc/nginx/sites-available/default
-service nginx start
+sudo mkdir /etc/nginx/html
+sudo touch /etc/nginx/html/index.html
+sudo echo "Hello world!" > /etc/nginx/html/index.html
+sudo printf %s "server {
+    listen 80;
+    listen [::]:80 default_server;
+    root   /etc/nginx/html;
+    index  index.html index.htm;
+
+ #    location /redirect_me {
+ #       return 301 http://cuberule.com/;
+ #   }
+}" > /etc/nginx/sites-available/default
+sudo service nginx restart

@@ -31,10 +31,9 @@ exec {'Hello':
   provider => shell,
 }
 
-# create /404 file
-exec {'404':
-  command  => 'echo "Ceci n'est pas une page" | sudo tee /etc/nginx/html/404.html',
-  provider => shell,
+# create 404 file
+file { '/etc/nginx/html/404.html':
+  content => "Ceci n'est pas une page\n",
 }
 
 exec {'sudo sed -i "s/listen 80 default_server;/listen 80 default_server;\\n\\tlocation \/redirect_me {\\n\\t\\treturn 301 https:\/\/blog.ehoneahobed.com\/;\\n\\t}/" /etc/nginx/sites-available/default':

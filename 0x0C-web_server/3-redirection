@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # A script to install nginx web server and configure it to redirect_me
-# to another page.
+# to another page
 
 sudo apt-get update
 sudo apt-get install nginx -y
@@ -18,7 +18,7 @@ sudo printf %s "server {
     listen 80;
     listen [::]:80 default_server;
     root   /var/www/nginx/html;
-    
+
     # Add all the prefixes .php, . com .tech
     index index.html index.htm index.nginx-debian.html index.php;
 
@@ -29,4 +29,3 @@ sudo printf %s "server {
    }
 }" | sudo tee  /etc/nginx/sites-available/default
 sudo service nginx restart
-

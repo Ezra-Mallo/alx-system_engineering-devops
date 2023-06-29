@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 # A script to install nginx web server and configure it to redirect_me
-# to another page.
+# to another page
 
 sudo apt-get update
 sudo apt-get install nginx -y
 sudo mkdir -p /var/www/nginx/html
 sudo touch /var/www/nginx/html/index.html
-# replacing > wit "| sudo tee" because of the sudo command
+# replacing > with "| sudo tee" because of the sudo command
 
 # Creating the index page with the added text
 echo "Hello World!" | sudo tee /var/www/nginx/html/index.html
@@ -24,7 +24,7 @@ sudo printf %s "server {
     root   /var/www/nginx/html;
 
     # Add all the prefixes .php, . com .tech
-    index index.html index.htm index.nginx-debian.html index.php;
+    index index.html index.htm index.nginx-debian.html;
 
 
     # What to display when you type host_ip/redirect_me

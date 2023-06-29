@@ -1,8 +1,8 @@
 Readme
 |uptime | (dmesg | tail) | nmcli -p device show | mpstat -P ALL 1| localhost -I|
 
-* [Network](https://github.com/Ezra-Mallo/alx-system_engineering-devops/blob/master/0x0D-web_stack_debugging_0/Network)
-* [Docker](https://github.com/Ezra-Mallo/alx-system_engineering-devops/blob/master/0x0D-web_stack_debugging_0/dockers)
+* [Network](https://github.com/Ezra-Mallo/alx-system_engineering-devops/blob/master/0x0D-web_stack_debugging_0/Network.md)
+* [Docker](https://github.com/Ezra-Mallo/alx-system_engineering-devops/blob/master/0x0D-web_stack_debugging_0/dockers.md)
 
 # Web stack debugging
 ## Intro

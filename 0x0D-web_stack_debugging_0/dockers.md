@@ -1,9 +1,10 @@
 # Docker
 ## Readme
 * [What is Docker and why is it popular?](https://intranet.alxswe.com/rltoken/vnwC_G0pvR6XyfP1LUQhag)
+
 Let’s first pull a Docker image and run a container:
 
-``:wq`
+```
 vagrant@ubuntu-xenial:~$ docker ps
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 vagrant@ubuntu-xenial:~$ docker run -d -ti ubuntu:16.04

@@ -19,6 +19,6 @@ sudo printf %s "server {
     listen [::]:80 default_server;
     root   /var/www/nginx/html;
     # Add all the prefixes .php, . com .tech
-    index index.html index.htm index.nginx-debian.html, index.php;
+    index index.html index.htm index.nginx-debian.html index.php;
 }" | sudo tee  /etc/nginx/sites-available/default
 sudo service nginx restart

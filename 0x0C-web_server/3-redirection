@@ -20,7 +20,7 @@ sudo printf %s "server {
     root   /var/www/nginx/html;
     
     # Add all the prefixes .php, . com .tech
-    index index.html index.htm index.nginx-debian.html, index.php;
+    index index.html index.htm index.nginx-debian.html index.php;
 
 
     # What to display when you type url/redirect_me

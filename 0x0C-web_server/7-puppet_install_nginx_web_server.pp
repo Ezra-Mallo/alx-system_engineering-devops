@@ -26,7 +26,7 @@ exec {'make dir':
 }
 
 exec {'Hello':
-  command  => 'echo "Hello World!" | sudo tee /var/www/html/index.html',
+  command  => 'echo "Hello World!" | sudo tee /var/www/nginx/html/index.html',
   provider => shell,
 }
 

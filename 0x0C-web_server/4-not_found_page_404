@@ -16,19 +16,19 @@ echo "Ceci n'est pas une page" | sudo tee /etc/nginx/html/404.html
 # (1) Port the server should listen to, (2) Root directory of the default page
 # (3) Format to accept for index page   (4) Action and location for redirect_me
 # (5) Action and location for error Page
-sudo printf %s "server {
+
+
+printf %s "server {
     listen 80;
     listen [::]:80 default_server;
     root   /var/www/nginx/html;
     # Add all the prefixes .php, . com .tech
     index index.html index.htm index.nginx-debian.html index.php;
 
-    server_name _;
-    # What to display when you type url/redirect_me
     location /redirect_me {
         return 301 https://www.youtube.com/watch?v=RgtNZGA6NYQ;
     }
-    
+
     # When user tries url/404 or url/unexisitng page, it displays 404.html page
     error_page 404 /404.html;
     location /404 {

@@ -19,6 +19,12 @@ exec {'install':
 # OR: command  => 'sudo apt-get update ; sudo apt-get -y install nginx',
 
 
+# create directory using shell
+exec {'make dir':
+  command  => 'sudo mkdir -p /var/www/nginx/html',
+  provider => shell,
+}
+
 # create Index page file
 exec {'Hello':
   command  => 'echo "Hello World!" | sudo tee /var/www/nginx/html/index.html',
@@ -26,8 +32,8 @@ exec {'Hello':
 }
 
 # create /404 file
-exec {'Hello':
-  command  => 'echo "Ceci n\'est pas une page\n" | sudo tee /etc/nginx/html/404.html',
+exec {'404':
+  command  => 'echo "Ceci n'est pas une page" | sudo tee /etc/nginx/html/404.html',
   provider => shell,
 }
 

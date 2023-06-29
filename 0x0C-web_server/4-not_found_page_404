@@ -22,16 +22,13 @@ sudo printf %s "server {
     listen 80 default_server;
     listen [::]:80 default_server;
     root   /var/www/nginx/html;
-
     # Add all the prefixes .php, . com .tech
-    index index.html index.htm index.nginx-debian.html;
-
+    index  index.html index.htm index.nginx-debian.html;
 
     # What to display when you type host_ip/redirect_me
     location /redirect_me {
-       return 301 https://www.youtube.com/watch?v=RgtNZGA6NYQ;
+        return 301 https://www.youtube.com/watch?v=RgtNZGA6NYQ;
    }
-
 
     # When user tries url/404 or url/unexisitng page, it displays 404.html page
     error_page 404 /404.html;

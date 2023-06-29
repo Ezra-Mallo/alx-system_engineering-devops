@@ -7,7 +7,7 @@ sudo apt-get install nginx -y
 sudo mkdir -p /var/www/nginx/html
 sudo touch /var/www/nginx/html/index.html
 # replacing > wit "| sudo tee" because of the sudo command
-echo "Hello world!" | sudo tee /var/www/nginx/html/index.html
+echo "Hello World!" | sudo tee /var/www/nginx/html/index.html
 
 # This is Nginx default page (/etc/nginx/sites-availalbe/default) Server block
 # setting. It accepts the following codes:
@@ -23,7 +23,7 @@ sudo printf %s "server {
     index index.html index.htm index.nginx-debian.html, index.php;
 
 
-    # What to display when you type host/redirect_me
+    # What to display when you type url/redirect_me
     location /redirect_me {
         return 301 https://www.youtube.com/watch?v=RgtNZGA6NYQ/;
    }

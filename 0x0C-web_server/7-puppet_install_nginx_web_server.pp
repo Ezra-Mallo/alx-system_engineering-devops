@@ -28,7 +28,7 @@ exec {'make dir':
 file { '/var/www/nginx/index.html':
   ensure    => file,
   path      => '/var/www/nginx/html/index.html',
-  content   => 'Hello world!',
+  content   => 'Hello World!',
   mode      => '0644',
 }
 

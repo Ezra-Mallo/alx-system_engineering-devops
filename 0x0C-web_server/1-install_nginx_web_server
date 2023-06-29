@@ -7,7 +7,7 @@ sudo apt-get install nginx -y
 sudo mkdir -p /var/www/nginx/html
 sudo touch /var/www/nginx/html/index.html
 # replacing > wit "| sudo tee" because of the sudo command
-echo "Hello world!" | sudo tee /var/www/nginx/html/index.html
+echo "Hello World!" | sudo tee /var/www/nginx/html/index.html
 
 # This is Nginx default page (/etc/nginx/sites-availalbe/default) Server block
 # setting. It accepts the following codes:

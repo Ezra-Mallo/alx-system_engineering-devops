@@ -19,12 +19,6 @@ exec {'install':
 # OR: command  => 'sudo apt-get update ; sudo apt-get -y install nginx',
 
 
-# create directory using shell
-exec {'make dir':
-  command  => 'sudo mkdir -p /var/www/nginx/html',
-  provider => shell,
-}
-
 # create Index page file
 exec {'Hello':
   command  => 'echo "Hello World!" | sudo tee /var/www/nginx/html/index.html',

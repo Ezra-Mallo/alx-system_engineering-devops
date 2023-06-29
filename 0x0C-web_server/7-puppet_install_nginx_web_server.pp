@@ -40,36 +40,28 @@ file { '/var/www/nginx/404.html':
   mode      => '0644',
 }
 
-# add redirection and error page
-exec { 'Nginx default config file':
-  path      => '/var/www/nginx/html/index.html',
-  ensure    => file,
-  path      => '/etc/nginx/sites-enabled/default',
-  content   => "server {
+# assign value to the variable server_block 
+server_block = "server {
         listen 80 default_server;
         listen [::]:80 default_server;
-        root   /var/www/nginx/html;
-        index  index.html index.htm;
-        # Add all the prefixes .php, . com .tech
+        root   /var/www/nginx/html;        
         index index.html index.htm index.nginx-debian.html;
         
-        if (\$request_filename ~ redirect_me){
-            rewrite ^ https://www.youtube.com/watch?v=RgtNZGA6NYQ/;
-        }
-        
-        # When user tries url/404 or url/unexisitng page, it displays 404.html page
         server_name _;
+        location / {
+                try_files \$uri \$uri/ =404;
+        }        
         error_page 404 /404.html;
         location  /404.html {
             internal;
         }
-        location / {
-                try_files \$uri \$uri/ =404;
+
+        if (\$request_filename ~ redirect_me){
+            rewrite ^ https://www.youtube.com/watch?v=RgtNZGA6NYQ permanent;
         }
-
-   }",
 }
-
+"
+echo "$server_block" > /etc/nginx/sites-available/default
 
 # restart nginx
 exec {'run':

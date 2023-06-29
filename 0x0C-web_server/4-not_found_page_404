@@ -33,8 +33,7 @@ sudo printf %s "server {
 
     # When user tries url/404 or url/unexisitng page, it displays 404.html page
     error_page 404 /404.html;
-    location /404 {
-      root /etc/nginx/html;
+    location /404.html {
       internal;
     }
 }" | sudo tee /etc/nginx/sites-available/default

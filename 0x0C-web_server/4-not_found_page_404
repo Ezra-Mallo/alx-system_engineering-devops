@@ -25,10 +25,9 @@ sudo printf %s "server {
     # Add all the prefixes .php, . com .tech
     index index.html index.htm index.nginx-debian.html index.php;
 
-    # What to display when you type host_ip/redirect_me
+    # What to display when you type url/redirect_me
     location /redirect_me {
-        return 301 https://www.youtube.com/watch?v=RgtNZGA6NYQ;
-   }
+        return 301 https://www.youtube.com/watch?v=RgtNZGA6NYQ/;
 
     # When user tries url/404 or url/unexisitng page, it displays 404.html page
     error_page 404 /404.html;

@@ -19,11 +19,11 @@ echo "Ceci n'est pas une page" | sudo tee /etc/nginx/html/404.html
 # (3) Format to accept for index page   (4) Action and location for redirect_me
 # (5) Action and location for error Page
 sudo printf %s "server {
-    listen 80 default_server;
+    listen 80;
     listen [::]:80 default_server;
     root   /var/www/nginx/html;
     # Add all the prefixes .php, . com .tech
-    index  index.html index.htm index.nginx-debian.html;
+    index index.html index.htm index.nginx-debian.html index.php;
 
     # What to display when you type host_ip/redirect_me
     location /redirect_me {

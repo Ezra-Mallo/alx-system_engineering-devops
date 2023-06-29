@@ -18,26 +18,24 @@ echo "Ceci n'est pas une page" | sudo tee /etc/nginx/html/404.html
 # (1) Port the server should listen to, (2) Root directory of the default page
 # (3) Format to accept for index page   (4) Action and location for redirect_me
 # (5) Action and location for error Page
-server_block=\
-"server {
-        listen 80 default_server;
-        listen [::]:80 default_server;
-               root /var/www/html;
-        index index.html index.htm index.nginx-debian.html;
-        server_name _;
-        location / {
-                try_files \$uri \$uri/ =404;
-        }
-        error_page 404 /404.html;
-        location  /404.html {
-            internal;
-        }
+sudo printf %s "server {
+    listen 80;
+    listen [::]:80 default_server;
+    root   /var/www/nginx/html;
+    # Add all the prefixes .php, . com .tech
+    index index.html index.htm index.nginx-debian.html index.php;
 
-        if (\$request_filename ~ redirect_me){
-            rewrite ^ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;
-        }
-}"
+    server_name _;
+    # What to display when you type url/redirect_me
+    location /redirect_me {
+        return 301 https://www.youtube.com/watch?v=RgtNZGA6NYQ/;
+    }
 
-echo "$server_block" | sudo tee /etc/nginx/sites-available/default
+    # When user tries url/404 or url/unexisitng page, it displays 404.html page
+    error_page 404 /404.html;
+    location /404.html {
+      internal;
+    }
+}" | sudo tee /etc/nginx/sites-available/default
 
 sudo service nginx restart

@@ -1,7 +1,24 @@
 #!/usr/bin/env bash
-# script to install nginx
+# A script to install nginx on my ubuntu web server
+# Only port and root directory are set here
+
 sudo apt-get update
 sudo apt-get install nginx -y
-sudo chown -R ubuntu /var/www/html
-sudo echo "Hello World!" > /var/www/html/index.nginx-debian.html
+sudo mkdir -p /var/www/nginx/html
+sudo touch /var/www/nginx/html/index.html
+# replacing > wit "| sudo tee" because of the sudo command
+echo "Hello World!" | sudo tee /var/www/nginx/html/index.html
+
+# This is Nginx default page (/etc/nginx/sites-availalbe/default) Server block
+# setting. It accepts the following codes:
+# (1) Port the server should listen to, (2) Root directory of the default page
+# (3) Format to accept for index page   (4) Action and location for redirect_me
+# (5) Action and location for error Page
+sudo printf %s "server {
+    listen 80;
+    listen [::]:80 default_server;
+    root   /var/www/nginx/html;
+    # Add all the prefixes .php, . com .tech
+    index index.html index.htm index.nginx-debian.html index.php;
+}" | sudo tee  /etc/nginx/sites-available/default
 sudo service nginx restart

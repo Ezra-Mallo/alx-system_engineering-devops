@@ -7,7 +7,11 @@ sudo apt-get install nginx -y
 sudo mkdir -p /var/www/nginx/html
 sudo touch /var/www/nginx/html/index.html
 # replacing > wit "| sudo tee" because of the sudo command
+
+# Creating the index page with the added text
 echo "Hello World!" | sudo tee /var/www/nginx/html/index.html
+# Creating the custom 404 error page with the added text
+echo "Ceci n'est pas une page" | sudo tee /etc/nginx/html/404.html
 
 # This is Nginx default page (/etc/nginx/sites-availalbe/default) Server block
 # setting. It accepts the following codes:
@@ -25,7 +29,7 @@ sudo printf %s "server {
 
     # What to display when you type host_ip/redirect_me
     location /redirect_me {
-       return 301 https://www.youtube.com/watch?v=RgtNZGA6NYQ/;
+       return 301 https://www.youtube.com/watch?v=RgtNZGA6NYQ;
    }
 
 
@@ -34,11 +38,7 @@ sudo printf %s "server {
     location /404 {
       root /etc/nginx/html;
       internal;
-      add_before_body /404.html;
     }
 }" | sudo tee /etc/nginx/sites-available/default
-
-# Creating the custom 404 error page with the added text
-echo "Ceci n'est pas une page" | sudo tee /etc/nginx/html/404.html
 
 sudo service nginx restart

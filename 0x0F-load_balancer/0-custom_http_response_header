@@ -4,23 +4,29 @@
 
 sudo apt-get update
 sudo apt-get install nginx -y
-sudo mkdir -p /var/www/nginx/html
-sudo touch /var/www/nginx/html/index.html
+sudo mkdir -p /var/www/html
+sudo chmod -R 755 /var/www
+sudo touch /var/www/html/index.html
 
-# replacing > with "| sudo tee" because of the sudo command
-echo "Hello World!" | sudo tee /var/www/nginx/html/index.html
+# Creating the index page
+echo "Hello World!" | sudo tee /var/www/html/index.html
 
-# Creating the custom 404 error page with the added text
+# Creating the custom 404 error page
+echo -e "Ceci n'est pas une page \n" | sudo tee /var/www/html/404.html
 
-# This is Nginx default page (/etc/nginx/sites-availalbe/default) Server block
-# setting. It accepts the following codes:
+# stream edit(sed) 404 in /etc/nginx/site-enabled
+replace="server_name _;\n\tadd_header X-Served-By \$hostname;\n\trewrite ^\/redirect_me https:\/\/www.blog.ehoneahobed.com permanent;"
+sudo sed -i "s/server_name _;/$replace/" /etc/nginx/sites-enabled/default
+
+# Rewrite server block(setting) of default page in 
+# /etc/nginx/sites-availalbe/default. Setting the following codes:
 # (1) Port the server should listen to, (2) Root directory of the default page
 # (3) Format to accept for index page   (4) Action and location for redirect_me
 # (5) Action and location for error Page
 sudo printf %s "server {
     listen 80;
     listen [::]:80 default_server;
-    root   /var/www/nginx/html;
+    root   /var/www/html;
     add_header X-Served-By $HOSTNAME;
     # Add all the prefixes .php, . com .tech
     index index.html index.htm index.nginx-debian.html index.php;
@@ -36,6 +42,5 @@ sudo printf %s "server {
 }
 " | sudo tee /etc/nginx/sites-available/default
 
-echo -e "Ceci n'est pas une page \n" | sudo tee /etc/nginx/html/404.html
 
 sudo service nginx restart

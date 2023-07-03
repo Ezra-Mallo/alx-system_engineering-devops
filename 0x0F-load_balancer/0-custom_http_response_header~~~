@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+# A script to to configure web-02 to be identical to web-01. 
+
+sudo apt-get -y update
+sudo apt-get -y install nginx
+mkdir -p /var/www/nginx/html
+touch /var/www/nginx/html/index.html
+echo "Hello World!" | sudo tee /var/www/nginx/html/index.html
+
+#sed = (stream editor), -i = (inline), 47i = (at line 47) \t = (tab) 
+# add_header = (directive to add to header), $HOSTNAME = (env var)
+sudo sed -i "47i\\\tadd_header X-Served-By $HOSTNAME;" /etc/nginx/sites-available/default
+
+
+replace="listen 80 default_server;\n\terror_page 404 \/404.ihtml;\n\tlocation = \/404.html {\n\t\troot \/var\/www\/html;\n\t\tinternal;\n\t}"
+sudo sed -i "s/listen 80 default_server;/$replace/" /etc/nginx/sites-enabled/default
+
+# redirect="\tlocation /redirect_me {\n\t\treturn 301 https://jojoport.netlify.com;\n\t}"
+sed -i "/server_name _;/a\ \n${redirect}\n" /etc/nginx/sites-available/default
+
+
+# Creating the custom 404 error page with the added text
+echo -e "Ceci n'est pas une page \n" | sudo tee /etc/nginx/html/404.html
+
+sudo service nginx restart
+
+
+
+

@@ -8,7 +8,8 @@
 
 # Concepts
 For this project, we expect you to look at these concepts:
-
+* [nginx documentation](https://nginx.org/en/docs/)
+* [nginx Beginner’s Guide](https://nginx.org/en/docs/beginners_guide.html)
 * [Load balancer](#load-balancer)
 * [Web stack debugging](https://github.com/Ezra-Mallo/alx-system_engineering-devops/blob/master/0x0D-web_stack_debugging_0/web_stack_debugging.md)
 

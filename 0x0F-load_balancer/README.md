@@ -14,11 +14,11 @@ For this project, we expect you to look at these concepts:
 # Resources read or watch:
 
 * [Introduction to load-balancing and HAproxy](https://www.digitalocean.com/community/tutorials/an-introduction-to-haproxy-and-load-balancing-concepts)
+* [HTTP header](https://www.techopedia.com/definition/27178/http-header)
+* [Debian/Ubuntu HAProxy packages](https://haproxy.debian.net/)
 * [How to Install and Configure HAProxy on Ubuntu 20.04](https://linuxhostsupport.com/blog/how-to-install-and-configure-haproxy-on-ubuntu-20-04/)
 * [nginx documentation](https://nginx.org/en/docs/)
 * [nginx Beginner’s Guide](https://nginx.org/en/docs/beginners_guide.html)
-* [HTTP header](https://www.techopedia.com/definition/27178/http-header)
-* [Debian/Ubuntu HAProxy packages](https://haproxy.debian.net/)
 
 
 

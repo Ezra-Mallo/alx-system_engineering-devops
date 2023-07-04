@@ -1,52 +1,18 @@
 #!/usr/bin/env bash
-# A script to install nginx web server and configure it to redirect_me
-# to another page
+# iInstall and configure HAproxy on your lb-01 server.
 
-sudo apt update -y
-sudo apt upgrade -y
-sudo apt install software-properties-common -y
-sudo apt update -y
-sudo apt install haproxy -y
+sudo apt-get install --no-install-recommends software-properties-common -y
+sudo add-apt-repository ppa:vbernat/haproxy-2.8 -y
+sudo apt-get install haproxy=2.8.\* -y
 
-
-sudo apt-get install nginx -y
-sudo mkdir -p /var/www/html
-sudo chmod -R 755 /var/www
-sudo touch /var/www/html/index.html
-
-# Creating the index page
-echo "Hello World!" | sudo tee /var/www/html/index.html
-
-# Creating the custom 404 error page
-echo -e "Ceci n'est pas une page \n" | sudo tee /var/www/html/404.html
-
-# stream edit(sed) 404 in /etc/nginx/site-enabled
-replace="server_name _;\n\tadd_header X-Served-By \$hostname;\n\trewrite ^\/redirect_me https:\/\/www.blog.ehoneahobed.com permanent;"
-sudo sed -i "s/server_name _;/$replace/" /etc/nginx/sites-enabled/default
-
-# Rewrite server block(setting) of default page in 
-# /etc/nginx/sites-availalbe/default. Setting the following codes:
-# (1) Port the server should listen to, (2) Root directory of the default page
-# (3) Format to accept for index page   (4) Action and location for redirect_me
-# (5) Action and location for error Page
-sudo printf %s "server {
-    listen 80;
-    listen [::]:80 default_server;
-    root   /var/www/html;
-    add_header X-Served-By $HOSTNAME;
-    # Add all the prefixes .php, . com .tech
-    index index.html index.htm index.nginx-debian.html index.php;
-
-    location /redirect_me {
-        return 301 https://www.youtube.com/watch?v=RgtNZGA6NYQ/;
-    }
-
-    error_page 404 /404.html;
-    location /404 {
-      root /var/www/html;
-      internal;
-}
-" | sudo tee /etc/nginx/sites-available/default
-
-
-sudo service nginx restart
+# edit config file
+HAproxy_config="frontend  malloshub-frontend
+        bind *:80
+        mode http
+        default_backend malloshub-backend
+backend malloshub-backend
+        balance roundrobin
+        server 179905-web-01 18.210.17.153:80 check
+        server 179905-web-02 100.25.183.151:80 check
+"
+echo "$HAproxy_config" | sudo tee -a /etc/haproxy/haproxy.cfg

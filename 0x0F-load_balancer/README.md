@@ -3,8 +3,13 @@
 ## | DevOps | SysAdmin |
 
 <p align="center">
-  <img src="https://github.com/Ezra-Mallo/0x0F-load_balancer/blob/main/0x0F-load_balancer/images/Udemy_pic1.png" alt="alx_pic1">
+  <img src="https://github.com/Ezra-Mallo/0x0F-load_balancer/blob/main/0x0F-load_balancer/images/alx_pic1.png" alt="alx_pic1">
 </p>
+
+<p align="center">
+  <img src="https://github.com/Ezra-Mallo/0x0F-load_balancer/blob/main/0x0F-load_balancer/images/images_1.gif" alt="alx_pic1">
+</p>
+
 
 # Concepts
 For this project, we expect you to look at these concepts:

@@ -8,20 +8,28 @@ sudo mkdir -p /var/www/html
 sudo chmod -R 755 /var/www
 sudo touch /var/www/html/index.html
 
-# Creating the index page & 404 page
+# Creating the index page
 echo "Hello World!" | sudo tee /var/www/html/index.html
+
+# Creating the custom 404 error page
 echo -e "Ceci n'est pas une page \n" | sudo tee /var/www/html/404.html
 
-# stream edit(sed), inline, at line 47 add comment to header in etc/nginx/site_available/default
+# stream edit(sed) and add commend to header in etc/nginx/site_available/default
 sudo sed -i "47i\\\tadd_header X-Served-By $HOSTNAME;" /etc/nginx/sites-available/default
 
-# stream edit(sed) for the redirect in /etc/nginx/site-availalble
-sudo sed -i "57i\\\tlocation /redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=RgtNZGA6NYQ/;\n\t}" /etc/nginx/sites-available/default;
+
+
 
 
 # stream edit(sed) 404 in /etc/nginx/site-avilable/default
 error="\terror_page 404 /not_found.html;"
 sudo sed -i "/server_name _;/a\ \n$error\n" /etc/nginx/sites-available/default
 
-sudo service nginx restart
+# stream edit(sed) redirect in /etc/nginx/site-availalble
+rediirect="\tlocation /redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=RgtNZGA6NYQ/}"
+sudo sed -i "/server_name _;/a\ \n$redirect\n" /etc/nginx/sites-available/default
+sudo sed -i "61i\n\\\tlocation /redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=RgtNZGA6NYQ/}"
 
+# sed -i "/server_name _;/a\ \tiadd_header X-Served-By \$HOSTNAME always;" /etc/nginx/sites-available/default  
+
+sudo service nginx restart

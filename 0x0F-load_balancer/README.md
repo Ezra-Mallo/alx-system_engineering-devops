@@ -10,7 +10,7 @@
   <img src="https://github.com/Ezra-Mallo/0x0F-load_balancer/blob/main/0x0F-load_balancer/images/images_1.gif" alt="alx_pic1">
 </p>
 
-[.tech domain](https://get.tech/)
+[.tech domain](https://controlpanel.tech/)
 # Concepts
 For this project, we expect you to look at these concepts:
 * [Load balancer](#load-balancer)

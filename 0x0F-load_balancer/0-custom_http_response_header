@@ -20,8 +20,9 @@ sudo sed -i "57i\\\tlocation /redirect_me {\n\t\treturn 301 https://www.youtube.
 
 
 # stream edit(sed) 404 in /etc/nginx/site-avilable/default
-error="\terror_page 404 /not_found.html;"
+error="\terror_page 404 /404.html;"
 sudo sed -i "/server_name _;/a\ \n$error\n" /etc/nginx/sites-available/default
+      root /var/www/html;
 
 sudo service nginx restart
 

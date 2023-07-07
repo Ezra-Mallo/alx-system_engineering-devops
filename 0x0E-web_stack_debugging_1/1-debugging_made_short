@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # 5 Line script to kill nginx process & create a proper simlink, and then start
-kill "$(pgrep 'nginx' | head -1)"
+pkill "$(pgrep 'nginx' | head -1)"
 ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-service nginx restart
+service nginx start

@@ -11,6 +11,6 @@
 # service (init) must say that nginx is not running ← for real
 # kill nginx process and create a proper simlink, then start the service
 
-pkill nginx | sed "s/-p \$PID/-p -100/"
-ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default -f
-service nginx restart
+ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+service nginx start
+kill "$(pgrep 'nginx' | head -1)"

@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Configure your domain zone so that the subdomain www points to your
+# load-balancer IP (lb-01). Let’s also add other subdomains to make our life
+# easier, and write a Bash script that will display information about subdomains.
+
+my_list=("www." "lb-01." "web-01." "web-02.")
+for item in "${my_list[@]}"; do
+  url="$item$1"
+  output=$(dig +noall +answer "$url")
+
+  # Extract and display individual parts using awk
+  record_type=$(echo "$output" | awk '{print $4}')
+  ip_address=$(echo "$output" | awk '{print $5}')
+  echo "The subdomain $item is a $record_type record and points to $ip_address"
+done

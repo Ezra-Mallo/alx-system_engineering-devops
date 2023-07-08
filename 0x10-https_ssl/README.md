@@ -13,6 +13,14 @@
 
 # Concepts
 For this project, we expect you to look at these concepts:
+HTTPS (Hypertext Transfer Protocol Secure) is the secure version of HTTP, the protocol used for transmitting data over the internet. It incorporates SSL (Secure Sockets Layer) or its successor, TLS (Transport Layer Security), to provide encryption and authentication for secure communication between a client (usually a web browser) and a server.
+
+The two main roles of HTTPS and SSL/TLS are as follows:
+
+Encryption: The primary role of HTTPS and SSL/TLS is to ensure secure communication by encrypting the data transmitted between the client and the server. Encryption transforms the data into a format that can only be read by authorized parties, preventing unauthorized access or eavesdropping. When a client establishes a connection with an HTTPS-enabled website, SSL/TLS initiates a handshake process, during which the client and server agree on encryption algorithms and exchange cryptographic keys. These keys are then used to encrypt and decrypt data during the session, protecting it from interception or tampering.
+Encryption ensures the confidentiality and integrity of the transmitted data, making it extremely difficult for malicious actors to intercept and decipher sensitive information, such as passwords, financial details, or personal data.
+
+Authentication: The second important role of SSL/TLS is to provide authentication. SSL/TLS allows the client to verify the identity of the server it is communicating with, ensuring that it is connecting to the intended and trusted website. Authentication is achieved through the use of digital certificates, which are issued by trusted Certificate Authorities (CAs). These certificates contain the website's public key and are signed by the CA, serving as a digital credential that verifies the authenticity of the website.
 * [DNS](#dns)
 * [Web stack debugging](https://github.com/Ezra-Mallo/alx-system_engineering-devops/blob/master/0x0D-web_stack_debugging_0/web_stack_debugging.md)
 
@@ -22,6 +30,12 @@ For this project, we expect you to look at these concepts:
 * [HAProxy SSL termination on Ubuntu16.04](https://docs.ionos.com/cloud/)
 * [SSL termination](https://en.wikipedia.org/wiki/TLS_termination_proxy)
 * [Bash function](https://tldp.org/LDP/abs/html/complexfunct.html)
+
+* [use code to install certbort and follow the configuration](#certbot)
+* [Certbot](https://certbot.eff.org/)
+* [Certbot](https://github.com/certbot/certbot)
+* [Install certbot](https://certbot.eff.org/instructions?ws=haproxy&os=ubuntufocal)
+* [Install certbot](https://serversforhackers.com/c/letsencrypt-with-haprox)
 
 ### man or help:
 
@@ -55,4 +69,26 @@ In an administrator panel at domain provider account, you can create any number 
 
 As you can see, all of the domain addresses used as an example (above) do not start with the www prefix. www is also a sub domain. The www prefix always leads to the main domain. See: [What’s the point in having www in a url?](https://serverfault.com/questions/145777/what-s-the-point-in-having-www-in-a-url)
 
+
+## certbot
+- Run the script with sudo
+
+
+sudo ./certbot www.yourdomain.tech your_email
+
+
+- When installation is complete
+- We need to configure our haproxy
+- sudo vi /etc/haproxy/haproxy.cfg
+- You should change the all the content to the content of the following script
+- Please edit where necessary(line 37 to 49)
+- You will need to put your domain name and web server ip addresses
+- Test the validity of your server running the following command
+- sudo haproxy -c -f /etc/haproxy/haproxy.cfg
+- It should show valid. You can then
+- Exit your web_server and then write the same content inside the 1-haproxy_ssl_termination file. Make it executable and push to github. You should be good
+
+
+[see certbot code here](https://github.com/Ezra-Mallo/alx-system_engineering-devops/blob/master/0x10-https_ssl/certbot)
+[see config file here here](https://github.com/Ezra-Mallo/alx-system_engineering-devops/blob/master/0x10-https_ssl/1-haproxy_ssl_termination)
 

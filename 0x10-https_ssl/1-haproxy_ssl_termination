@@ -35,15 +35,12 @@ defaults
 	errorfile 504 /etc/haproxy/errors/504.http
 
 frontend mymalloshub-frontend
-	bind *:80
         mode http
-	#bind *:443 ssl crt /etc/haproxy/certs/www.jojothomas.tech.pem
-    	bind *:443 ssl crt /etc/ssl/www.malloshub.tech/www.malloshub.tech.pem
-
-    	option forwardfor
-		default_backend mymalloshub-backend
-
-
+        bind *:80
+        bind *:443 ssl crt /etc/haproxy/certs/www.malloshub.tech.pem
+        option forwardfor
+        default_backend mybackend
+                
 backend mymalloshub-backend
         balance roundrobin
         server 179905-web-01 18.206.197.169:80 check

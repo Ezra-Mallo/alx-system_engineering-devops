@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-
 # Installs and cretes an SSL Certificate using certbot
 # This script assumes you have HAProxy installed
 # Reference: https://serversforhackers.com/c/letsencrypt-with-haproxy

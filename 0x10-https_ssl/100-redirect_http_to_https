@@ -35,15 +35,14 @@ defaults
 	errorfile 504 /etc/haproxy/errors/504.http
 
 frontend mymalloshub-frontend
-		bind *:80
-        #bind *:443 ssl crt /etc/haproxy/certs/www.jojothomas.tech.pem
-    	bind *:443 ssl crt /etc/ssl/www.malloshub.tech/www.malloshub.tech.pem
-        
-		# Redirect if HTTPS is not used
-    	redirect scheme https code 301 if !{ ssl_fc }
-
-		default_backend mymalloshub-backend
-
+        mode http
+        bind *:80
+        bind *:443 ssl crt /etc/haproxy/certs/www.malloshub.tech.pem
+        #bind *:443 ssl crt /etc/ssl/www.malloshub.tech/www.malloshub.tech.pem
+        acl has_www hdr_beg(host) -i www
+        http-request redirect  code 301  location https://www.malloshub.tech unless has_www
+        option forwardfor
+        default_backend mybackend
 
 backend mymalloshub-backend
         balance roundrobin

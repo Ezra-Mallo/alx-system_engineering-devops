@@ -1,6 +1,3 @@
-
-
-
 global
 	log /dev/log	local0
 	log /dev/log	local1 notice
@@ -39,19 +36,16 @@ defaults
 
 frontend mymalloshub-frontend
 		bind *:80
-        mode http
-		#bind *:443 ssl crt /etc/haproxy/certs/www.jojothomas.tech.pem
+        #bind *:443 ssl crt /etc/haproxy/certs/www.jojothomas.tech.pem
     	bind *:443 ssl crt /etc/ssl/www.malloshub.tech/www.malloshub.tech.pem
         
 		# Redirect if HTTPS is not used
     	redirect scheme https code 301 if !{ ssl_fc }
 
-    	option forwardfor
 		default_backend mymalloshub-backend
 
 
 backend mymalloshub-backend
         balance roundrobin
-        server 179905-web-01 18.206.197.169:80 check cookie web-01
-        server 179905-web-02 100.25.183.151:80 check cookie web-02
-
+        server 179905-web-01 18.206.197.169:80 check
+        server 179905-web-02 100.25.183.151:80 check

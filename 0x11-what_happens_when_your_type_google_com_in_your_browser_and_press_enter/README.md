@@ -18,3 +18,10 @@ Let’s practice by exploring the infrastructure side (network, servers, securit
 <p align="center">
 <img src="https://github.com/Ezra-Mallo/alx-system_engineering-devops/blob/master/0x11-what_happens_when_your_type_google_com_in_your_browser_and_press_enter/images/alx_pics1.jpg" alt="alx_pic1">
 </p>
+
+[Gliffy](https://www.gliffy.com/) is free and what I personally use, but feel free to use what fits you best.
+
+
+<p align="center">
+<img src="https://github.com/Ezra-Mallo/alx-system_engineering-devops/blob/master/0x11-what_happens_when_your_type_google_com_in_your_browser_and_press_enter/images/alx_pics2.png" alt="alx_pic2">
+</p>

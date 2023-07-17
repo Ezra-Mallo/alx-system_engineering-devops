@@ -1,11 +1,6 @@
 <h1 align="center"> 0x11. What happens when you type google.com in your browser and press Enter</h1>
 
-## | DevOpsi | Network | SysAdmin |
-
-<p align="center">
-  <img src="https://github.com/Ezra-Mallo/alx-system_engineering-devops/blob/master/0x10-https_ssl/images/alx_pic1.png" alt="alx_pic1">
-            
-</p>
+## | DevOps | Network | SysAdmin |
 
 
 # Background Context

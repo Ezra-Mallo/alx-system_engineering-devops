@@ -90,3 +90,45 @@ These are just a few examples of possible UFW rules. You can customize the rules
 <p align="center">
 <img src="https://github.com/Ezra-Mallo/alx-system_engineering-devops/blob/master/0x11-what_happens_when_your_type_google_com_in_your_browser_and_press_enter/images/alx_pics2.png" alt="alx_pic1">
 </p>
+
+## to configure ufw to redirect from port 8080 to port 80
+
+To configure the ufw firewall on web-01 to redirect port 8080/TCP to port 80/TCP, you can follow these steps:
+
+* SSH into the web-01 server:
+```
+ssh user@web-01
+```
+
+Open the ufw configuration file using a text editor such as nano:
+```
+sudo nano /etc/ufw/before.rules
+```
+
+Scroll to the section where the rules are defined and add the following lines above the *filter line:
+```
+# rediret port 8080 to port 80
+*nat
+:PREROUTING ACCEPT [0:0]
+-A PREROUTING -p tcp --dport 8080 -j REDIRECT --to-port 80
+COMMIT
+```
+Save the file and exit the text editor.
+
+Restart the ufw firewall to apply the changes:
+
+bash
+Copy code
+```
+sudo ufw disable
+sudo ufw enable
+```
+Verify that the changes have been applied successfully:
+lua
+Copy code
+```
+sudo ufw status
+```
+The output of the sudo ufw status command should show that port 8080 is being redirected to port 80.
+
+Please note that modifying firewall configurations can have security implications. Ensure that you have a thorough understanding of the changes you are making and their potential impact on your system before implementing them.

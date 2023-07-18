@@ -12,17 +12,20 @@ sudo touch /var/www/html/index.html
 echo "Hello World!" | sudo tee /var/www/html/index.html
 echo -e "Ceci n'est pas une page \n" | sudo tee /var/www/html/404.html
 
+datetim=$(date '+%d_%m_%Y_%H_%M_%S')
+new_default="default_$datetim"
+sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/$new_default
+
 # stream edit(sed), inline, at line 47 add comment to header in etc/nginx/site_available/default
 sudo sed -i "47i\\\tadd_header X-Served-By $HOSTNAME;" /etc/nginx/sites-available/default
 
 # stream edit(sed) for the redirect in /etc/nginx/site-availalble
-sudo sed -i "57i\\\tlocation /redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=RgtNZGA6NYQ/;\n\t}" /etc/nginx/sites-available/default;
+sudo sed -i "55i\\\tlocation /redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=RgtNZGA6NYQ/;\n\t}" /etc/nginx/sites-available/default;
 
 
 # stream edit(sed) 404 in /etc/nginx/site-avilable/default
 error="\terror_page 404 /404.html;"
 sudo sed -i "/server_name _;/a\ \n$error\n" /etc/nginx/sites-available/default
-      root /var/www/html;
 
 sudo service nginx restart
 

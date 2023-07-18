@@ -1,41 +1,27 @@
 #!/usr/bin/env bash
-
-# Installs and cretes an SSL Certificate using certbot
-# This script assumes you have HAProxy installed
-# Reference: https://serversforhackers.com/c/letsencrypt-with-haproxy
-
 # Check if running as root user
 if [[ $EUID -ne 0 ]]; then
 	echo 'Please run this script as root or sudo'
 	exit 1
 fi
 
-# Check if Certbot is not installed
-if ! command -v certbot &> /dev/null; then
-    # Install Certbot
-    echo "Installing Certbot..."
-    apt-get update
-    apt-get install -y certbot
-else
-    echo "Certbot is already installed."
-fi
+if [ $# -eq 1 ]; then
+	sudo apt update -y
+	sudo apt install snapd -y
+	sudo apt-get remove certbot -y
+	sudo apt-get install certbot -y
+	sudo service haproxy stop -y
 
-# Create SSL Certificate
-fuser -k 80/tcp			# shutdown whatever program is listening at port 80/tcp
-service haproxy stop	# Stop HAProxy
+	MY_DOMAIN="$1"
+	sudo certbot certonly --standalone --preferred-challenges http --http-01-port 80 -d "$MY_DOMAIN" -d  "$MY_DOMAIN"
+	sudo ls /etc/letsencrypt/live/"$MY_DOMAIN"
+	sudo mkdir -p /etc/haproxy/certs
 
-if [ $# -eq 2 ]; then
-	# Generate the certificate
-	certbot certonly --standalone -d "$1" --non-interactive --agree-tos --email "$2"
-
-	# Create PEM file to use in HAProxy
-	mkdir -p /etc/ssl/"$1"
-	cat /etc/letsencrypt/live/"$1"/fullchain.pem /etc/letsencrypt/live/"$1"/privkey.pem | tee /etc/ssl/"$1"/"$1.pem"
+	sudo -E bash -c 'cat /etc/letsencrypt/live/$MY_DOMAIN/fullchain.pem /etc/letsencrypt/live/$MY_DOMAIN/privkey.pem > /etc/haproxy/certs/$MY_DOMAIN.pem'
+	sudo chmod -R go-rwx /etc/haproxy/certs
+	sudo vi /etc/haproxy/haproxy.cfg
+	sudo service haproxy start	
 else
 	SCRIPT_NAME=$(basename "$0")
-	echo "Usage: ./$SCRIPT_NAME YOUR_DOMAIN YOUR_EMAIL"
-	echo  "eg. sudo ./certbot www.malloshub.tech ezra.c.mallo@gmail.com"
+	echo  "Usage: sudo ./certbot <malloshub.tech>"
 fi
-
-# Start HAProxy
-service haproxy start

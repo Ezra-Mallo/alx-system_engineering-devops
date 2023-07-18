@@ -21,13 +21,15 @@ To view all running processes along with their child processes in a “tree” f
 $ ps axf
 ```
 For more information about child processes, [see this documentation.](https://www.gnu.org/software/libc/manual/html_node/Processes.html#Processes)
-
+[.tech domain](https://controlpanel.tech/)
 ## Resources read or watch:
 * [How the web works](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/How_the_Web_works)
 * [Linux SCP Command Explained: Securely Copy & Transfer Files {13 Examples}
 ](https://phoenixnap.com/kb/linux-scp-command)
 * [Nginx](https://en.wikipedia.org/wiki/Nginx)
 * [How to Configure Nginx](https://www.digitalocean.com/community/tutorials/how-to-set-up-nginx-server-blocks-virtual-hosts-on-ubuntu-16-04)
+* [nginx documentation](https://nginx.org/en/docs/)
+* [nginx Beginner’s Guide](https://nginx.org/en/docs/beginners_guide.html)
 * [How To Set Up Nginx Server Blocks (Virtual Hosts) on Ubuntu 16.04](https://www.digitalocean.com/community/tutorials/how-to-set-up-nginx-server-blocks-virtual-hosts-on-ubuntu-16-04)
 * [How To Install Nginx on Ubuntu 16.04: Use this guide to set up Nginx on its own.](https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-16-04)
 * [How To Set Up Nginx Server Blocks on Ubuntu 22.04](https://linuxhint.com/set-up-nginx-server-blocks-ubuntu-22-04/)

@@ -19,7 +19,7 @@
 * [0x08-networking_basics_2](https://github.com/Ezra-Mallo/alx-system_engineering-devops/tree/master/0x08-networking_basics_2)
 * [0x09-web_infrastructure_design](https://github.com/Ezra-Mallo/alx-system_engineering-devops/tree/master/0x09-web_infrastructure_design)
 
-## CM | SSH | Server configuration
+## CM(PUPPET) | SSH | Server configuration(NGINX)
 * [0x0A-configuration_management](https://github.com/Ezra-Mallo/alx-system_engineering-devops/tree/master/0x0A-configuration_management)
 * [0x0B-ssh](https://github.com/Ezra-Mallo/alx-system_engineering-devops/tree/master/0x0B-ssh)
 * [0x0C-web_server](https://github.com/Ezra-Mallo/alx-system_engineering-devops/tree/master/0x0C-web_server)

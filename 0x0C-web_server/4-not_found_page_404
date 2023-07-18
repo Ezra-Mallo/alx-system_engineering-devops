@@ -11,7 +11,6 @@ sudo touch /var/www/nginx/html/index.html
 echo "Hello World!" | sudo tee /var/www/nginx/html/index.html
 
 # Creating the custom 404 error page with the added text
-echo "Ceci n'est pas une page" | sudo tee /etc/nginx/html/404.html
 
 # This is Nginx default page (/etc/nginx/sites-availalbe/default) Server block
 # setting. It accepts the following codes:
@@ -31,14 +30,17 @@ sudo printf %s "server {
     }
     error_page 404 /404.html;
     location  /404.html {
+        root /etc/nginx/html;    
         internal;
     }
-    
-    # What to display when you type url/redirect_me
+
     location /redirect_me {
         return 301 https://www.youtube.com/watch?v=RgtNZGA6NYQ/;
-   }
- 
-}" | sudo tee /etc/nginx/sites-available/default
+    }
+
+}
+" | sudo tee /etc/nginx/sites-available/default
+
+echo -e "Ceci n'est pas une page \n" | sudo tee /etc/nginx/html/404.html
 
 sudo service nginx restart

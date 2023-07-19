@@ -11,11 +11,13 @@
 For this project, we expect you to look at these concepts:
 
 * [What is a database](https://www.techtarget.com/searchdatamanagement/definition/database)
+* [How To Choose an Effective Backup Strategy](https://www.digitalocean.com/community/tutorials/how-to-choose-an-effective-backup-strategy-for-your-vps)
 * [What is a database primary/replicate cluster](https://www.digitalocean.com/community/tutorials/how-to-choose-a-redundancy-plan-to-ensure-high-availability#sql-replication)
 * [MySQL primary/replicate setup](https://www.digitalocean.com/community/tutorials/how-to-set-up-replication-in-mysql)
 * [Build a robust database backup strategy](https://www.databasejournal.com/ms-sql/developing-a-sql-server-backup-strategy/)
 * [Web stack debugging]
 * [How to Install mysql 5.7](#how-to-install-mysql-57)
+
 # Resources
 Read or watch:
 
@@ -24,7 +26,8 @@ Read or watch:
 * [Build a robust database backup strategy](https://www.databasejournal.com/ms-sql/developing-a-sql-server-backup-strategy/)
 
 ## How to Install mysql 5.7
-Copy the key here to your clipboard
+
+* Copy the key here to your clipboard
 
 * [https://dev.mysql.com/doc/refman/5.7/en/checking-gpg-signature.html](https://dev.mysql.com/doc/refman/5.7/en/checking-gpg-signature.html)
 

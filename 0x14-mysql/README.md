@@ -68,3 +68,20 @@ sudo apt install -f mysql-client=5.7* mysql-community-server=5.7* mysql-server=5
 
 ## Usage:
 ### Task 0. Run software as another user
+```
+ubuntu@229-web-01:~$ mysql --version
+mysql  Ver 14.14 Distrib 5.7.25, for Linux (x86_64) using  EditLine wrapper
+ubuntu@229-web-01:~$
+```
+
+### Task 1. Let us in!
+```
+ubuntu@229-web-01:~$ mysql -uholberton_user -p -e "SHOW GRANTS FOR 'holberton_user'@'localhost'"
+Enter password:
++-----------------------------------------------------------------+
+| Grants for holberton_user@localhost                             |
++-----------------------------------------------------------------+
+| GRANT REPLICATION CLIENT ON *.* TO 'holberton_user'@'localhost' |
++-----------------------------------------------------------------+
+ubuntu@229-web-01:~$
+```

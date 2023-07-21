@@ -68,6 +68,9 @@ sudo apt install -f mysql-client=5.7* mysql-community-server=5.7* mysql-server=5
 
 ## Usage:
 ### Task 0. Run software as another user
+
+* Get MySQL distribution 5.7.x installed on both web-01 and web-02 servers.
+
 ```
 ubuntu@229-web-01:~$ mysql --version
 mysql  Ver 14.14 Distrib 5.7.25, for Linux (x86_64) using  EditLine wrapper
@@ -75,6 +78,13 @@ ubuntu@229-web-01:~$
 ```
 
 ### Task 1. Let us in!
+* Create a user and password for both MySQL databases which will allow the checker access to them.
+	* user named holberton_user on both web-01 and web-02 with the host name set to localhost and the password projectcorrection280hbtn. This will allow us to access the replication status on both servers.
+	* Make sure that holberton_user has permission to check the primary/replica status of your databases.
+	* In addition to that, make sure that task #3 of your SSH project is completed for web-01 and web-02. You will likely need to add the public key to web-02 as you only added it to web-01 for this project. The checker will connect to your servers to check MySQL status
+
+* CREATE USER 'holberton_user'@'localhost' IDENTIFIED BY 'projectcorrection280hbtn';
+
 ```
 ubuntu@229-web-01:~$ mysql -uholberton_user -p -e "SHOW GRANTS FOR 'holberton_user'@'localhost'"
 Enter password:
@@ -85,3 +95,4 @@ Enter password:
 +-----------------------------------------------------------------+
 ubuntu@229-web-01:~$
 ```
+

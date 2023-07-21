@@ -49,4 +49,3 @@ symbolic-links=0
 # binlog_do_db: Specifies the database(s) to be included in the binary log for replication.
 binlog_do_db	= db
 binlog_do_db    = tyrell_corp
-

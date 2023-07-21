@@ -128,6 +128,31 @@ mysql> FLUSH PRIVILEGES;
 
 
 
-
+```
 mysql> CREATE USER 'replica_user'@'%' IDENTIFIED WITH mysql_native_password BY 'replicapassword';
+```
+* Check the status of replicat slave privilages on the database 
+```
+mysql> SELECT user, Repl_slave_priv FROM mysql.user
++------------------+-----------------+
+| user             | Repl_slave_priv |
++------------------+-----------------+
+| replica_user     | N               |
++------------------+-----------------+
+```
+
+* Grant privilage and check status again
+```
+mysql> GRANT REPLICATION SLAVE ON *.* TO 'replica_user'@'%';
+mysql> SELECT user, Repl_slave_priv FROM mysql.user;
++------------------+-----------------+
+| user             | Repl_slave_priv |
++------------------+-----------------+
+| replica_user     | Y               |
++------------------+-----------------+
+```
+* Grant SELECT privilages to user holberton_user in the table mysql.user table in order to check that replica_user was created with the correct permissions.
+```
+GRANT SELECT ON mysql.user TO 'holberton_user'@'localhost';
+```
 

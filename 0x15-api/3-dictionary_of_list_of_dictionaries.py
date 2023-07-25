@@ -4,28 +4,30 @@ data in the CSV format."""
 
 import json
 import requests
-from sys import argv
 
 
 if __name__ == '__main__':
     """ To get get employee response [used to get name in line 19]"""
-    employee_Id = argv[1]
-    base_Url = "https://jsonplaceholder.typicode.com/users"
-    url = base_Url + "/" + employee_Id
+    baseUrl = "https://jsonplaceholder.typicode.com/users"
 
-    response = requests.get(url)
-    username = response.json().get('username')
+    response = requests.get(baseUrl)
+    users = response.json()
 
-    todo_Url = url + "/todos"
-    response = requests.get(todo_Url)
-    tasks = response.json()
-    my_dict1 = {}
-    my_dict2 = {employee_Id: []}
-    for task in tasks:
-        my_dict1["task"] = task.get('title'),
-        my_dict1["completed"] = task.get('completed')
-        my_dict1["username"] = username
-        my_dict2[employee_Id].append(my_dict1)
+    my_dict = {}
+    for user in users:
+        user_id = user.get('id')
+        username = user.get('username')
+        url = "{}/{}".format(baseUrl, user_id)
+        url = url + '/todos/'
+        response = requests.get(url)
+        tasks = response.json()
+        my_dict[user_id] = []
+        for task in tasks:
+            my_dict[user_id].append({
+                "task": task.get('title'),
+                "completed": task.get('completed'),
+                "username": username
+            })
 
-    with open('{}.json'.format(employee_Id), 'w') as filename:
-        json.dump(my_dict2, filename)
+    with open('todo_all_employees.json', 'w') as filename:
+        json.dump(my_dict, filename)

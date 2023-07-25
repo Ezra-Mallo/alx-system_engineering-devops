@@ -7,17 +7,27 @@ from sys import argv
 
 
 if __name__ == '__main__':
-    """ TO get get employee response [used to get name in line 19]"""
-    endpoint = "https://jsonplaceholder.typicode.com"
-    user_res = requests.get(endpoint + '/users/' + argv[1]).json()
+    """ To get get employee response [used to get name in line 19]"""
+    employee_Id = argv[1]
+    base_Url = "https://jsonplaceholder.typicode.com/users"
+    url = base_Url + "/" + employee_Id
 
-    # get total number of tasks [used to get len of all tasks in line 18]
-    todos = requests.get(endpoint + '/todos?userId=' + argv[1]).json()
+    response_1 = requests.get(url)
+    employee_Name = response_1.json().get('name')
 
-    # get number completed tasks and their titles
-    titles_done = [todo['title'] for todo in todos if todo['completed']]
+    todo_Url = url + "/todos"
+    response_2 = requests.get(todo_Url)
+    tasks = response_2.json()
+    done = 0
+    done_tasks = []
 
-    print('Employee {} is done with tasks({}/{}):'
-          .format(user_res['name'], len(titles_done), len(todos)))
+    for task in tasks:
+        if task.get('completed'):
+            done_tasks.append(task)
+            done += 1
 
-    [print('\t {}'.format(title)) for title in titles_done]
+    print("Employee {} is done with tasks({}/{}):"
+          .format(employee_Name, done, len(tasks)))
+
+    for task in done_tasks:
+        print("\t {}".format(task.get('title')))
